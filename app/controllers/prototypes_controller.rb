@@ -2,10 +2,10 @@ class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   
   def index
-    @prototypes = Prototype.all
     if user_signed_in?
       @name = current_user.name
     end
+    @prototypes = Prototype.all
   end
 
   def new
